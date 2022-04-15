@@ -15,25 +15,24 @@ def generate_diff(f1, f2):
 
     keys1 = list(file1.keys())
     keys2 = list(file2.keys())
+
+    if len(keys1) == 0 and len(keys2) == 0:
+        return {}
+
     uniq_keys = sorted(set(keys1) | set(keys2))
 
     result = "{\n"
     for n in uniq_keys:
         if n in keys1 and n in keys2:
-            resf1 = true_and_false(file1[n])
-            resf2 = true_and_false(file2[n])
-            similar_elements = "\t" + str(n) + ": " + resf1 + "\n"
-            first_element_dif = "\t" + "- " + str(n) + ": " + resf1 + "\n"
-            second_element_dif = "\t" + "+ " + str(n) + ": " + resf2 + "\n"
             if file1[n] == file2[n]:
-                result += similar_elements
+                result += "\t" + str(n) + ": " + true_and_false(file1[n]) + "\n"
             else:
-                result += first_element_dif
-                result += second_element_dif
+                result += "\t" + "- " + str(n) + ": " + true_and_false(file1[n]) + "\n"
+                result += "\t" + "+ " + str(n) + ": " + true_and_false(file2[n]) + "\n"
         elif n in keys1 and n not in keys2:
-            result += first_element_dif
+            result += "\t" + "- " + str(n) + ": " + true_and_false(file1[n]) + "\n"
         else:
-            result += second_element_dif
+            result += "\t" + "+ " + str(n) + ": " + true_and_false(file2[n]) + "\n"
 
     result += "}"
     print(result)
