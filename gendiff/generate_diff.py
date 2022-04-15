@@ -1,7 +1,7 @@
 import json
 
 
-def true_and_false(element):
+def lo(element):
     element = str(element)
     if element == "True" or element == "False":
         return element[0:1].lower() + element[1:]
@@ -25,14 +25,14 @@ def generate_diff(f1, f2):
     for n in uniq_keys:
         if n in keys1 and n in keys2:
             if file1[n] == file2[n]:
-                result += "\t" + str(n) + ": " + true_and_false(file1[n]) + "\n"
+                result += "\t" + str(n) + ": " + lo(file1[n]) + "\n"
             else:
-                result += "\t" + "- " + str(n) + ": " + true_and_false(file1[n]) + "\n"
-                result += "\t" + "+ " + str(n) + ": " + true_and_false(file2[n]) + "\n"
+                result += "\t" + "- " + str(n) + ": " + lo(file1[n]) + "\n"
+                result += "\t" + "+ " + str(n) + ": " + lo(file2[n]) + "\n"
         elif n in keys1 and n not in keys2:
-            result += "\t" + "- " + str(n) + ": " + true_and_false(file1[n]) + "\n"
+            result += "\t" + "- " + str(n) + ": " + lo(file1[n]) + "\n"
         else:
-            result += "\t" + "+ " + str(n) + ": " + true_and_false(file2[n]) + "\n"
+            result += "\t" + "+ " + str(n) + ": " + lo(file2[n]) + "\n"
 
     result += "}"
     print(result)
