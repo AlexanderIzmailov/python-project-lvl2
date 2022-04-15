@@ -1,4 +1,3 @@
-#from gendiff.generate_diff import generate_diff
 from gendiff import generate_diff
 
 
@@ -17,6 +16,7 @@ f2 = args.second_file
 
 def main():
     generate_diff(f1, f2)
+
 
 if __name__ == '__main__':
     main()
