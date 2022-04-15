@@ -3,7 +3,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/d3d1e5a44025dd40e4bf/maintainability)](https://codeclimate.com/github/AlexanderIzmailov/python-project-lvl2/maintainability)
 
-[![hexlet-lint](https://github.com/AlexanderIzmailov/python-project-lvl2/actions/workflows/hexlet-lint/hexlet-lint.yml/badge.svg)](https://github.com/AlexanderIzmailov/python-project-lvl2/actions/workflows/hexlet-lint.yml)
+[![hexlet-lint](https://github.com/AlexanderIzmailov/python-project-lvl2/actions/workflows/hexlet-lint/badge.svg)](https://github.com/AlexanderIzmailov/python-project-lvl2/actions/workflows/hexlet-lint.yml)
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/d3d1e5a44025dd40e4bf/test_coverage)](https://codeclimate.com/github/AlexanderIzmailov/python-project-lvl2/test_coverage)
 
