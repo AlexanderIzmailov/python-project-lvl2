@@ -3,14 +3,10 @@ import json
 
 
 def generate_diff(f1, f2):
-    f1_open = open(f1)
-    f2_open = open(f2)
-
-    if len(f1_open.read()) == 0 or len(f2_open.read()) == 0:
-        return
-
-    f1_open.close()
-    f2_open.close()
+    with open(f1) as f1_open:
+        with open(f2) as f2_open:
+            if len(f1_open.read()) == 0 or len(f2_open.read()) == 0:
+                return
 
     file1 = json.load(open(f1))
     file2 = json.load(open(f2))
