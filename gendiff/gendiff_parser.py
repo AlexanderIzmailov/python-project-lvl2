@@ -7,10 +7,9 @@ def true_and_false(element):
 
 
 def parser(data1, data2):
-    uniq_keys = sorted(set(data1) | set(data2))
-
     keys1 = list(data1.keys())
     keys2 = list(data2.keys())
+    uniq_keys = sorted(set(keys1) | set(keys2))
 
     result = "{\n"
     for n in uniq_keys:
