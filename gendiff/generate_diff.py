@@ -1,5 +1,13 @@
 from .gendiff_parser import parser
 import json
+import yaml
+
+
+def open_format(file):
+    if file.endswith(".yml") or file.endswith(".yaml"):
+        return yaml.safe_load(open(file))
+    if file.endswith(".json"):
+        return json.load(open(file))
 
 
 def generate_diff(f1, f2):
@@ -8,8 +16,8 @@ def generate_diff(f1, f2):
             if len(f1_open.read()) == 0 or len(f2_open.read()) == 0:
                 return
 
-    file1 = json.load(open(f1))
-    file2 = json.load(open(f2))
+    file1 = open_format(f1)
+    file2 = open_format(f2)
 
     keys1 = list(file1.keys())
     keys2 = list(file2.keys())
