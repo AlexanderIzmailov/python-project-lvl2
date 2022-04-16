@@ -11,7 +11,7 @@ def generate_diff(f1, f2):
 
     if len(keys1) == 0 and len(keys2) == 0:
         return {}
-    
+
     if len(file1) == 0 and len(file2) == 0:
         return {}
 
