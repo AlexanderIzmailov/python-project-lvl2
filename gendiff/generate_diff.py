@@ -10,7 +10,7 @@ def open_format(file):
         return json.load(open(file))
 
 
-def generate_diff(f1, f2):
+def generate_diff(f1, f2, formatter="stylish"):
     with open(f1) as f1_open:
         with open(f2) as f2_open:
             if len(f1_open.read()) == 0 or len(f2_open.read()) == 0:
@@ -25,7 +25,7 @@ def generate_diff(f1, f2):
     if len(keys1) == 0 and len(keys2) == 0:
         return
 
-    result = parser(file1, file2)
+    result = parser(file1, file2, formatter)
 
     print(result)
     return result
