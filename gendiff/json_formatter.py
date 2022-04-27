@@ -1,4 +1,5 @@
 from .stylish_formatter import true_false_none
+import json
 
 
 def true_false_none_for_tree(tree):
@@ -12,4 +13,5 @@ def true_false_none_for_tree(tree):
             else:
                 result[key] = true_false_none(tree[key])
     start(tree, result)
-    return str(result)
+    
+    return json.dumps(result, indent = 4)
