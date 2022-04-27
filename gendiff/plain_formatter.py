@@ -1,4 +1,12 @@
-from .stylish_formatter import true_false_none
+def true_false_none_plain(element):
+    if element is True:
+        return "true"
+    elif element is False:
+        return "false"
+    elif element is None:
+        return "null"
+    else:
+        return "'{}'".format(element)
 
 
 def is_next_same(key, tree):
@@ -35,7 +43,7 @@ def plain(tree):    # noqa: C901
 
             next_same, is_next_dict, next_key_value = is_next_same(key, tree)
 
-            next_key_value = true_false_none(next_key_value)
+            next_key_value = true_false_none_plain(next_key_value)
 
             if not next_same and is_key_dict and last == clear_key:
                 cur_result = start(tree[key], cur_result, path)
@@ -47,7 +55,7 @@ def plain(tree):    # noqa: C901
             if is_key_dict:
                 res1 = "[complex value]"
             else:
-                res1 = "'{}'".format(true_false_none(key_value))
+                res1 = "{}".format(true_false_none_plain(key_value))
 
             if not next_same:
                 if last == "minus":
@@ -59,7 +67,7 @@ def plain(tree):    # noqa: C901
                 if is_next_dict:
                     res2 = "[complex value]"
                 else:
-                    res2 = "'{}'".format(next_key_value)
+                    res2 = "{}".format(next_key_value)
 
                 if last == "minus":
                     end_row = "was updated. From {} to {}\n".format(res1, res2)
@@ -68,7 +76,7 @@ def plain(tree):    # noqa: C901
             cur_result += "Property '{}' {}".format(path, end_row)
 
         return cur_result
-    
+
     result = start(tree, "")
-    
+
     return result.strip()
