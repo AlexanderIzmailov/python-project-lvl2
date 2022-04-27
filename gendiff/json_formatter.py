@@ -13,5 +13,5 @@ def true_false_none_for_tree(tree):
             else:
                 result[key] = true_false_none(tree[key])
     start(tree, result)
-    
-    return json.dumps(result, indent = 4)
+
+    return json.dumps(result, indent=4)
