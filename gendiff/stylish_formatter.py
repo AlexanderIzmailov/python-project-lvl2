@@ -10,7 +10,7 @@ def true_false_none(element):
 
 def stylish(tree):
     level = 1
-    sep = "\t"
+    sep = "  "
 
     def start(tree, cur_result, cur_level, sep):
         for key in tree.keys():
@@ -18,16 +18,16 @@ def stylish(tree):
 
             if is_key_dict:
                 cur_result += "{}{}: {{\n".format(cur_level * sep, key)
-                cur_level += 1
+                cur_level += 2
                 cur_result = start(tree[key], cur_result, cur_level, sep)
-                cur_level -= 1
-                cur_result += "{}}}\n".format(cur_level * sep)
+                cur_level -= 2
+                cur_result += "{}}}\n".format((cur_level + 1) * sep)
             else:
                 value = true_false_none(tree[key])
                 cur_result += "{}{}: {}\n".format(cur_level * sep, key, value)
         return cur_result
 
-    return start(tree, "\n{\n", level, sep) + "}"
+    return start(tree, "{\n", level, sep) + "}"
 
 
 def change_keys(tree):
