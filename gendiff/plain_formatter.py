@@ -69,4 +69,4 @@ def plain(tree):    # noqa: C901
 
         return cur_result
 
-    return start(tree, "\n")
+    return start(tree, "")
