@@ -1,5 +1,6 @@
 from .stylish_formatter import stylish, change_keys
 from .plain_formatter import plain
+from .json_formatter import true_false_none_for_tree
 
 
 def compare(d1, d2):    # noqa: C901
@@ -89,5 +90,9 @@ def parser(file1, file2, formatter="stylish"):
 
     if formatter == "plain":
         result = plain(sort_dict_)
+
+    if formatter == "json":
+        change_keys_ = change_keys(sort_dict_)
+        result = true_false_none_for_tree(change_keys_)
 
     return result

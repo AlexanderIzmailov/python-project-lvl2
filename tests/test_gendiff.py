@@ -29,3 +29,10 @@ def test_plain_big_diff_json():
 
     assert generate_diff("tests/fixtures/file1_big.yaml", "tests/fixtures/file2_big.json", "plain") == result.read()
     result.close()
+
+
+def test_json_big_diff_json():
+    result = open("tests/fixtures/json_result")
+
+    assert generate_diff("tests/fixtures/file1_big.yaml", "tests/fixtures/file2_big.json", "json") == result.read()
+    result.close()

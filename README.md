@@ -14,3 +14,5 @@ asciinema for gendiff (yml): https://asciinema.org/a/Y0vfVp6Mbqc1jOZOYHjC9DSHR
 asciinema for gendiff (json, recursive comparison): https://asciinema.org/a/hQOQKQI3u5a82ayYMwLvdaEPJ
 
 asciinema for gendiff (json, plain): https://asciinema.org/a/yX9TDgZHA2WNQiyMSDeKqDTSf
+
+asciinema for gendiff (json, json): https://asciinema.org/a/ZePZ6TOHAiLzfonx84ibWHWsw
