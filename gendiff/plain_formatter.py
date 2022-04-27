@@ -1,10 +1,11 @@
 def true_false_none_plain(element):
-    if element is True:
-        return "true"
-    elif element is False:
-        return "false"
-    elif element is None:
+    element = str(element)
+    if element == "True" or element == "False":
+        return element.lower()
+    elif element == "None":
         return "null"
+    elif element == "0":
+        return 0
     else:
         return "'{}'".format(element)
 
