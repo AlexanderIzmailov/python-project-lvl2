@@ -68,5 +68,7 @@ def plain(tree):    # noqa: C901
             cur_result += "Property '{}' {}".format(path, end_row)
 
         return cur_result
-
-    return start(tree, "")
+    
+    result = start(tree, "")
+    
+    return result.strip()
